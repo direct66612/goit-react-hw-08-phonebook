@@ -19,10 +19,10 @@ export const List = () => {
   };
   return (
     <Container>
-      {contactsIsFiltered.map(({ id, name, phone }) => (
+      {contactsIsFiltered.map(({ id, name, number }) => (
         <li key={id} className="contact__item">
           <p>
-            {name}: {phone}
+            {name}: {number}
           </p>
           <button
             type="button"

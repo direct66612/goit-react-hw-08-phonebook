@@ -1,11 +1,10 @@
 import Container from "./Form.styled";
 import { useState } from "react";
-import { nanoid } from "nanoid";
 import { useDispatch, useSelector } from "react-redux";
 import { getContacts } from "../../Redux/contactsSlice";
 import { addContactAction } from "../../Redux/api";
 export const Form = () => {
-  const [data, setData] = useState({ name: "", phone: "" });
+  const [data, setData] = useState({ name: "", number: "" });
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
   const handleChange = (e) => {
@@ -25,12 +24,11 @@ export const Form = () => {
     }
 
     const newContact = {
-      id: nanoid(),
       ...data,
     };
 
     dispatch(addContactAction(newContact));
-    setData({ name: "", phone: "" });
+    setData({ name: "", number: "" });
   };
   return (
     <Container>
@@ -46,8 +44,8 @@ export const Form = () => {
         <input
           className="input__tel"
           type="number"
-          name="phone"
-          value={data.phone}
+          name="number"
+          value={data.number}
           onChange={handleChange}
           required
         />
