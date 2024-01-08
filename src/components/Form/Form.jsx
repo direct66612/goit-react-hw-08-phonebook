@@ -4,7 +4,7 @@ import { nanoid } from "nanoid";
 import { useDispatch, useSelector } from "react-redux";
 import { getContacts } from "../../Redux/contactsSlice";
 import { addContactAction } from "../../Redux/api";
-const Form = () => {
+export const Form = () => {
   const [data, setData] = useState({ name: "", phone: "" });
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
@@ -58,4 +58,3 @@ const Form = () => {
     </Container>
   );
 };
-export default Form;

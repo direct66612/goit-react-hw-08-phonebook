@@ -4,7 +4,7 @@ import Container from "./List.styled";
 import { getContacts } from "../../Redux/contactsSlice";
 import { deleteContactAction } from "../../Redux/api";
 import { getFilter } from "../../Redux/filterSlice";
-const List = () => {
+export const List = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
   const filteredContacts = (contacts, filter) => {
@@ -36,4 +36,3 @@ const List = () => {
     </Container>
   );
 };
-export default List;
